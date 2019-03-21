@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MovieType">
+
+	<insert id="add" parameterType="MovieType">
+		insert into movie_type(name,content)
+		values(#{name},#{content})
+	</insert>
+	<insert id="addMore">
+	insert into movie_type(name,content)values
+	<foreach collection="list" item="s" separator=",">
+	(#{s.name},#{s.content})
+	</foreach>
+	</insert>
+	<update id="update" parameterType="MovieType">
+		update movie_type set
+		name=#{name},
+		content=#{content},
+		where id=#{id}
+	</update>
+	<select id="queryById" parameterType="int" resultType="MovieType">
+	select * from movie_type where id=#{id}
+	</select>
+	<select id="queryAll"  resultType="MovieType">
+	select * from movie_type where id&lt;100
+	</select>
+	<select id="queryByPage" parameterType="map" resultType="MovieType">
+	select * from movie_type limit #{start},#{pageSize}
+	</select>
+	<select id="queryByUsername"   resultType="MovieType">
+	select * from movie_type where username like #{username}
+	</select>
+	<select id="getTotals" resultType="int">
+	select count(*) from movie_type
+	</select>
+	<delete id="deleteById">
+	delete from movie_type where id=#{id}
+	</delete>
+	<delete id="deleteMore">
+	delete from movie_type where id in
+	<foreach collection="array" open="(" close=")" separator="," item="id">
+	#{id}
+	</foreach>
+	</delete>
+	
+</mapper>

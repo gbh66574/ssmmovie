@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Movie">
+
+	<insert id="add" parameterType="Movie">
+		insert into Movie(name,type,content,price,photo)
+		values(#{name},#{type},#{content},#{price},#{photo})
+	</insert>
+	<insert id="addMore">
+	insert into Movie(name,type,content,price,photo)values
+	<foreach collection="list" item="s" separator=",">
+	(#{s.name},#{s.type},#{s.content},#{s.price},#{s.photo})
+	</foreach>
+	</insert>
+	<update id="update" parameterType="Movie">
+		update Movie set
+		name=#{name}
+		type=#{type}
+		content=#{price}
+		photo=#{name}
+		where id=#{id}
+	</update>
+	<select id="queryById" parameterType="int" resultType="Movie">
+	select * from Movie where id=#{id}
+	</select>
+	<select id="queryAll"  resultType="Movie">
+	select * from Movie where id&lt;100
+	</select>
+	<select id="queryByPage" parameterType="map" resultType="com.entor.vo.MovieVo">
+     SELECT m.*,mt.name mname FROM movie m,movie_type mt WHERE m.type=mt.id 	
+     </select>
+	<select id="queryByUsername"   resultType="Movie">
+	select * from Movie where username like #{username}
+	</select>
+	<select id="getTotals" resultType="int">
+	select count(*) from Movie
+	</select>
+	<delete id="deleteById">
+	delete from Movie where id=#{id}
+	</delete>
+	<delete id="deleteMore">
+	delete from Movie where id in
+	<foreach collection="array" open="(" close=")" separator="," item="id">
+	#{id}
+	</foreach>
+	</delete>
+	
+</mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="User">
+
+	<insert id="add" parameterType="User">
+		insert into User(username,password,name,sex,dress,phone,qq,createTime)
+		values(#{username},#{password},#{password},#{name},#{sex},#{dress},#{phone},#{qq},#{createTime})
+	</insert>
+	<insert id="addMore">
+	insert into User(username,password,name,sex,dress,phone,qq,createTime)values
+	<foreach collection="list" item="s" separator=",">
+	(#{s.username},#{s.password},#{s.password},#{s.name},#{s.sex},#{s.dress},#{s.phone},#{s.qq},#{s.createTime})
+	</foreach>
+	</insert>
+	<update id="update" parameterType="User">
+		update User set
+		username=#{username}
+		password=#{password}
+		name=#{name}
+		sex=#{sex}
+		dress=#{dress}
+		phone=#{phone}
+		qq=#{qq}
+		createTime=#{createTime}
+		where id=#{id}
+	</update>
+	<select id="queryById" parameterType="int" resultType="User">
+	select * from User where id=#{id}
+	</select>
+	<select id="queryAll"  resultType="User">
+	select * from User where id&lt;100
+	</select>
+	 
+	<select id="login" parameterType="map" resultType="User">
+	select * from User where username=#{username} and password=#{password}
+	</select>
+	<select id="queryByPage" parameterType="map" resultType="User">
+	select * from User limit #{start},#{pageSize}
+	</select>
+	<select id="queryByUsername"   resultType="User">
+	select * from User where username like #{username}
+	</select>
+	<select id="getTotals" resultType="int">
+	select count(*) from User
+	</select>
+	<delete id="deleteById">
+	delete from User where id=#{id}
+	</delete>
+	<delete id="deleteMore">
+	delete from User where id in
+	<foreach collection="array" open="(" close=")" separator="," item="id">
+	#{id}
+	</foreach>
+	</delete>
+	
+</mapper>

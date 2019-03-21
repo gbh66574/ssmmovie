@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Conservator">
+
+	<insert id="add" parameterType="Conservator">
+		insert into Conservator(username,password)
+		values(#{username},#{password})
+	</insert>
+	<insert id="addMore">
+	insert into Conservator(username,password)values
+	<foreach collection="list" item="s" separator=",">
+	(#{s.username},#{s.password})
+	</foreach>
+	</insert>
+	<update id="update" parameterType="Conservator">
+		update Conservator set
+		username=#{username}
+		password=#{password}
+		where id=#{id}
+	</update>
+	<select id="queryById" parameterType="int" resultType="Conservator">
+	select * from Conservator where id=#{id}
+	</select>
+	<select id="queryAll"  resultType="Conservator">
+	select * from Conservator where id&lt;100
+	</select>
+	 
+	<select id="login" parameterType="map" resultType="Conservator">
+	select * from Conservator where username=#{username} and password=#{password}
+	</select>
+	<select id="queryByPage" parameterType="map" resultType="Conservator">
+	select * from Conservator limit #{start},#{pageSize}
+	</select>
+	<select id="getTotals" resultType="int">
+	select count(*) from Conservator
+	</select>
+	<delete id="deleteById">
+	delete from Conservator where id=#{id}
+	</delete>
+	<delete id="deleteMore">
+	delete from Conservator where id in
+	<foreach collection="array" open="(" close=")" separator="," item="id">
+	#{id}
+	</foreach>
+	</delete>
+	
+</mapper>
