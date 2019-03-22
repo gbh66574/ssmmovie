@@ -166,16 +166,28 @@ public class ConservatorController {
 		}
 	}
 	@RequestMapping("/login")
-    public String login(Conservator conservator) throws Exception {
-		conservator=ConservatorService.checkLogin(conservator.getUsername(), conservator.getPassword());
-		 if(conservator!=null){
-	        	request.getSession().setAttribute("conservator", conservator);
-				return "conservatorindex";           
-	        }else {
-				request.setAttribute("msg", "登录失败");
-				return "login";
-			}
+    public void login(Conservator conservator) {
+		JSONObject jo = new JSONObject();
+		PrintWriter out = null;
+		Conservator c=ConservatorService.checkLogin(conservator.getUsername(), conservator.getPassword());
+		
+		try {
+			if(c!=null) {
+			out=response.getWriter();
+			jo.put("state", 0);
+			jo.put("msg", "登录成功");
 		}
+		} catch (IOException e) {
+			jo.put("state", -1);
+			jo.put("msg", "登录失败"+e.getMessage());
+		}finally {
+			String json = JSON.toJSONString(jo);
+			System.out.println(json);
+			out.write(json);
+			out.flush();
+			out.close();
+		}
+	}
 	@InitBinder
     public void initBinder(ServletRequestDataBinder binder){
         binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true));

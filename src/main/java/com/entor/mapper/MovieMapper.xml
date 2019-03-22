@@ -18,7 +18,7 @@
 		name=#{name}
 		type=#{type}
 		content=#{price}
-		photo=#{name}
+		photo=#{photo}
 		where id=#{id}
 	</update>
 	<select id="queryById" parameterType="int" resultType="Movie">

@@ -1,5 +1,6 @@
 package com.entor.service.impl;
 
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -15,13 +16,21 @@ public class UserServiceimpl extends BaseServiceimpl<User> implements UserServic
 
 	    
 	    public User checkLogin(String username, String password) {
-	       
-	        User user = userDao.Login(username, password);
-	        if (user != null && user.getPassword().equals(password)) {
+	    	User user = userDao.Login(username, password);
+	        if (user != null ) {
 	            return user;
 	        }
 	        return null;
+	       
 	    }
+
+		@Override
+		public void addUser(User u) {
+			
+			 userDao.addUser(u);
+			
+		}
+
 
 	
 }

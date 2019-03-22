@@ -28,6 +28,7 @@ import com.entor.dao.MessageDao;
 import com.entor.entity.Message;
 
 import com.entor.service.MessageService;
+import com.entor.vo.MessageVo;
 
 @Controller
 @RequestMapping("/Message")
@@ -45,10 +46,10 @@ public class MessageController {
 			out = response.getWriter();
 			MessageService.add(Message);
 			jo.put("state", 0);
-			jo.put("msg", "�����ɹ�");
+			jo.put("msg", "�����ɹ�");
 		}catch(Exception e) {
 			jo.put("state", -1);
-			jo.put("msg", "����ʧ��"+e.getMessage());
+			jo.put("msg", "����ʧ��"+e.getMessage());
 		}finally {
 			String str = JSON.toJSONString(jo);
 			System.out.println(str);
@@ -65,10 +66,10 @@ public class MessageController {
 			out = response.getWriter();
 			MessageService.deleteMore(Message.class,ids);
 			jo.put("state", 0);
-			jo.put("msg", "ɾ���ɹ�");
+			jo.put("msg", "ɾ���ɹ�");
 		}catch(Exception e) {
 			jo.put("state", -1);
-			jo.put("msg", "ɾ��ʧ��"+e.getMessage());
+			jo.put("msg", "ɾ��ʧ��"+e.getMessage());
 		}finally {
 			String str = JSON.toJSONString(jo);
 			System.out.println(str);
@@ -86,10 +87,10 @@ public class MessageController {
 
 			MessageService.update(Message);
 			jo.put("state", 0);
-			jo.put("msg", "�޸ĳɹ�");
+			jo.put("msg", "�޸ĳɹ�");
 		}catch(Exception e) {
 			jo.put("state", -1);
-			jo.put("msg", "�޸�ʧ��"+e.getMessage());
+			jo.put("msg", "�޸�ʧ��"+e.getMessage());
 		}finally {
 			String str = JSON.toJSONString(jo);
 			System.out.println(str);
@@ -106,7 +107,7 @@ public class MessageController {
 		String qsex = request.getParameter("qsex");
 		String qbeginDate = request.getParameter("qbeginDate");
 		String qendDate = request.getParameter("qendDate");
-		//鑾峰彇姣忛�?�鏄剧ず璁板綍鏁�?
+		//鑾峰彇姣忛�?�鏄剧ず璁板綍鏁�?
 		String rows = request.getParameter("rows");
 	
 		String condition = " where 1=1 ";
@@ -126,13 +127,13 @@ public class MessageController {
 			condition += " and birthday <= '"+qendDate+"'";
 		}
 
-		//褰撳墠椤�?
+		//褰撳墠椤�?
 		int sp = 1;
 		//鎬昏褰曟暟
 		int totals = MessageService.getTotals(Message.class);
 		//姣忛〉璁板綍鏁�
 		int pageSize = Integer.parseInt(rows);
-		//鎬婚〉鏁�?
+		//鎬婚〉鏁�?
 		int pageCounts = totals/pageSize;
 		if(totals%pageSize!=0){
 			pageCounts++;
@@ -148,7 +149,7 @@ public class MessageController {
 		if(sp<1){
 			sp = 1;
 		}
-		List<Message> list =MessageService.queryByPage(Message.class, sp, pageSize);
+		List<MessageVo> list =MessageService.aqueryByPage(sp, pageSize);
 		try {
 			PrintWriter out = response.getWriter();
 			JSONObject jo = new JSONObject();

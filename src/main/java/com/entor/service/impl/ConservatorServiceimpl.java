@@ -19,9 +19,9 @@ public class ConservatorServiceimpl extends BaseServiceimpl<Conservator> impleme
 	    public Conservator checkLogin(String username, String password) {
 	       
 	    	Conservator conservator = conservatorDao.Login(username, password);
-	        if (conservator != null && conservator.getPassword().equals(password)) {
-	            return conservator;
-	        }
-	        return null;
+	    	 if (conservator != null ) {
+		            return conservator;
+		        }
+		        return null;
 	    }
 }

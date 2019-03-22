@@ -1,14 +1,19 @@
-package com.entor.entity;
+package com.entor.vo;
 
 import java.sql.Timestamp;
 import java.util.Date;
 
-public class Message {
+import com.alibaba.fastjson.annotation.JSONField;
+
+public class MessageVo {
 	private int id;
 	private String uid;
 	private String mid;
 	private String content;
+	@JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Timestamp reportTime;
+	private String uname;
+	private String mname;
 	public int getId() {
 		return id;
 	}
@@ -39,20 +44,34 @@ public class Message {
 	public void setReportTime(Timestamp reportTime) {
 		this.reportTime = reportTime;
 	}
+	public String getUname() {
+		return uname;
+	}
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+	public String getMname() {
+		return mname;
+	}
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
 	@Override
 	public String toString() {
-		return "Message [id=" + id + ", uid=" + uid + ", mid=" + mid + ", content=" + content + ", reportTime="
-				+ reportTime + "]";
+		return "MessageVo [id=" + id + ", uid=" + uid + ", mid=" + mid + ", content=" + content + ", reportTime="
+				+ reportTime + ", uname=" + uname + ", mname=" + mname + "]";
 	}
-	public Message(int id, String uid, String mid, String content, Timestamp reportTime) {
+	public MessageVo(int id, String uid, String mid, String content, Timestamp reportTime, String uname, String mname) {
 		super();
 		this.id = id;
 		this.uid = uid;
 		this.mid = mid;
 		this.content = content;
 		this.reportTime = reportTime;
+		this.uname = uname;
+		this.mname = mname;
 	}
-	public Message() {
+	public MessageVo() {
 		super();
 	}
 	

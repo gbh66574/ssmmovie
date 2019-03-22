@@ -50,6 +50,7 @@ public class UserController {
 			UserService.add(User);
 			jo.put("state", 0);
 			jo.put("msg", "新增成功");
+			
 		}catch(Exception e) {
 			jo.put("state", -1);
 			jo.put("msg", "新增失败"+e.getMessage());
@@ -163,17 +164,41 @@ public class UserController {
 		}
 	}
 	@RequestMapping("/login")
-    public String login(User user) throws Exception {
-        user=UserService.checkLogin(user.getUsername(), user.getPassword());
-        if(user!=null){
-        	request.getSession().setAttribute("user", user);
-			return "conservatorindex";           
-        }else {
-			request.setAttribute("msg", "登录失败");
-			return "login";
+    public void login(User user) {
+		JSONObject jo = new JSONObject();
+		PrintWriter out = null;
+		User u=UserService.checkLogin(user.getUsername(), user.getPassword());
+		
+		try {
+			if(u!=null) {
+			out=response.getWriter();
+			jo.put("state", 0);
+			jo.put("msg", "登录成功");
+		}
+		} catch (IOException e) {
+			jo.put("state", -1);
+			jo.put("msg", "登录失败"+e.getMessage());
+		}finally {
+			String json = JSON.toJSONString(jo);
+			System.out.println(json);
+			out.write(json);
+			out.flush();
+			out.close();
 		}
 	}
-    
+		
+	@RequestMapping("/logout")
+	public String logout()throws Exception{
+		request.getSession().invalidate();
+		return"login";
+	}
+	@RequestMapping("/addUser")
+	public String addUser(User User) {
+	/*	User.setId(1);*/
+		UserService.addUser(User);
+		return "success";
+	}
+	
 
 	@InitBinder
     public void initBinder(ServletRequestDataBinder binder){

@@ -3,6 +3,7 @@ package com.entor.dao.impl;
 
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -22,5 +23,11 @@ public class UserDaoimpl  extends BaseDaoimpl<User> implements UserDao{
 		map.put("password", password);
 		return getSqlSession().selectOne("User.login",map);
 		}
+
+	@Override
+	public void addUser(User u) {
+		
+		 getSqlSession().insert("User.addUser",u);
+	}
 	}
 

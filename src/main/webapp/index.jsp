@@ -31,8 +31,9 @@
 						<li><a href="contact.html">我的信息</a></li>
 						<li><a href="preview.html">留言板</a></li>
 						<li><a href="add.jsp">注册</a></li>
-						<li><a href="#">登录</a></li>
+						<li><a href="login2.jsp">用户登录</a></li>
 						<li><a href="login.jsp">管理员登录</a></li>
+						<li style="float: left;">欢迎【${user.name }】<a href="logout">&nbsp;注销</a></li>
 					</ul>
 				</div>
 

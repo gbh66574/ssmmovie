@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Message">
+
+	<insert id="add" parameterType="Message">
+		insert into Message(uid,mid,content,reportTime)
+		values(#{uid},#{mid},#{content},#{reportTime})
+	</insert>
+	<insert id="addMore">
+	insert into Message(name,type,content,price,photo)values
+	<foreach collection="list" item="s" separator=",">
+	(#{s.name},#{s.type},#{s.content},#{s.price},#{s.photo})
+	</foreach>
+	</insert>
+	<update id="update" parameterType="Message">
+		update Message set
+		uid=#{uid}
+		mid=#{mid}
+		content=#{price}
+		reportTime=#{reportTime}
+		where id=#{id}
+	</update>
+	<select id="queryById" parameterType="int" resultType="Message">
+	select * from Message where id=#{id}
+	</select>
+	<select id="queryAll"  resultType="Message">
+	select * from Message where id&lt;100
+	</select>
+	<select id="queryByPage" parameterType="map" resultType="com.entor.vo.MessageVo">
+     SELECT m.*,mv.name mname,u.name uname FROM Message m, user u,movie mv WHERE m.uid=u.id and m.mid=mv.id	
+     </select>
+	<select id="queryByUsername"   resultType="Message">
+	select * from Message where username like #{username}
+	</select>
+	<select id="getTotals" resultType="int">
+	select count(*) from Message
+	</select>
+	<delete id="deleteById">
+	delete from Message where id=#{id}
+	</delete>
+	<delete id="deleteMore">
+	delete from Message where id in
+	<foreach collection="array" open="(" close=")" separator="," item="id">
+	#{id}
+	</foreach>
+	</delete>
+	
+</mapper>

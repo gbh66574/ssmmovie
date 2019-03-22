@@ -7,6 +7,10 @@
 		insert into User(username,password,name,sex,dress,phone,qq,createTime)
 		values(#{username},#{password},#{password},#{name},#{sex},#{dress},#{phone},#{qq},#{createTime})
 	</insert>
+	<insert id="addUser" parameterType="User">
+		insert into User(id,username,password,name,sex,dress,phone,qq,createTime)
+		values(#{id},#{username},#{password},#{name},#{sex},#{dress},#{phone},#{qq},#{createTime})
+	</insert>
 	<insert id="addMore">
 	insert into User(username,password,name,sex,dress,phone,qq,createTime)values
 	<foreach collection="list" item="s" separator=",">

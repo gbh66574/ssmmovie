@@ -27,7 +27,7 @@
 				<ul>
 							<h1>用户注册</h1>
 					</ul>
-				<form action="User?opType=add" method="post">
+				<form action="User/addUser" method="post">
 					<input type="text" name="username" placeholder="Username"><br/>
 					<input type="password" name="password" placeholder="Password"><br/>
 					<input type="text" name="name" placeholder="Name"><br/>

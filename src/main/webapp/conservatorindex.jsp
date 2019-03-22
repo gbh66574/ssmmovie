@@ -54,7 +54,8 @@
 						<li><a href="#" url="movietype.jsp">电影类别管理</a></li>
 						<li><a href="#" url="movie.jsp">电影管理</a></li>
 						<li><a href="#" url="sysrole.jsp">订单管理</a></li>
-						<li><a href="#" url="sysmenu.jsp">留言管理</a></li>
+						<li><a href="#" url="message.jsp">留言管理</a></li>
+						<li><a href="index.jsp" >返回首页</a></li>
 
 
 					</ul>
