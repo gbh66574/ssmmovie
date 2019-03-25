@@ -28,6 +28,7 @@ import com.entor.dao.OrderDao;
 import com.entor.entity.Order;
 
 import com.entor.service.OrderService;
+import com.entor.vo.OrderVo;
 
 @Controller
 @RequestMapping("/Order")
@@ -45,10 +46,10 @@ public class OrderController {
 			out = response.getWriter();
 			OrderService.add(Order);
 			jo.put("state", 0);
-			jo.put("msg", "�����ɹ�");
+			jo.put("msg", "�����ɹ�");
 		}catch(Exception e) {
 			jo.put("state", -1);
-			jo.put("msg", "����ʧ��"+e.getMessage());
+			jo.put("msg", "����ʧ��"+e.getMessage());
 		}finally {
 			String str = JSON.toJSONString(jo);
 			System.out.println(str);
@@ -65,10 +66,10 @@ public class OrderController {
 			out = response.getWriter();
 			OrderService.deleteMore(Order.class,ids);
 			jo.put("state", 0);
-			jo.put("msg", "ɾ���ɹ�");
+			jo.put("msg", "ɾ���ɹ�");
 		}catch(Exception e) {
 			jo.put("state", -1);
-			jo.put("msg", "ɾ��ʧ��"+e.getMessage());
+			jo.put("msg", "ɾ��ʧ��"+e.getMessage());
 		}finally {
 			String str = JSON.toJSONString(jo);
 			System.out.println(str);
@@ -86,10 +87,10 @@ public class OrderController {
 
 			OrderService.update(Order);
 			jo.put("state", 0);
-			jo.put("msg", "�޸ĳɹ�");
+			jo.put("msg", "�޸ĳɹ�");
 		}catch(Exception e) {
 			jo.put("state", -1);
-			jo.put("msg", "�޸�ʧ��"+e.getMessage());
+			jo.put("msg", "�޸�ʧ��"+e.getMessage());
 		}finally {
 			String str = JSON.toJSONString(jo);
 			System.out.println(str);
@@ -106,7 +107,7 @@ public class OrderController {
 		String qsex = request.getParameter("qsex");
 		String qbeginDate = request.getParameter("qbeginDate");
 		String qendDate = request.getParameter("qendDate");
-		//鑾峰彇姣忛�?�鏄剧ず璁板綍鏁�?
+		//鑾峰彇姣忛�?�鏄剧ず璁板綍鏁�?
 		String rows = request.getParameter("rows");
 	
 		String condition = " where 1=1 ";
@@ -126,13 +127,13 @@ public class OrderController {
 			condition += " and birthday <= '"+qendDate+"'";
 		}
 
-		//褰撳墠椤�?
+		//褰撳墠椤�?
 		int sp = 1;
 		//鎬昏褰曟暟
 		int totals = OrderService.getTotals(Order.class);
 		//姣忛〉璁板綍鏁�
 		int pageSize = Integer.parseInt(rows);
-		//鎬婚〉鏁�?
+		//鎬婚〉鏁�?
 		int pageCounts = totals/pageSize;
 		if(totals%pageSize!=0){
 			pageCounts++;
@@ -148,7 +149,7 @@ public class OrderController {
 		if(sp<1){
 			sp = 1;
 		}
-		List<Order> list =OrderService.queryByPage(Order.class, sp, pageSize);
+		List<OrderVo> list =OrderService.aqueryByPage( sp, pageSize);
 		try {
 			PrintWriter out = response.getWriter();
 			JSONObject jo = new JSONObject();

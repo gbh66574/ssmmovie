@@ -188,6 +188,26 @@ public class ConservatorController {
 			out.close();
 		}
 	}
+	@RequestMapping("/logout")
+	public void logout(){
+		JSONObject jo = new JSONObject();
+		PrintWriter out = null;
+		request.getSession().invalidate();
+		try {
+			out=response.getWriter();
+			jo.put("state", 0);
+			jo.put("msg", "注销成功");
+		}catch (IOException e) {
+			
+		}finally {
+			String json = JSON.toJSONString(jo);
+			System.out.println(json);
+			out.write(json);
+			out.flush();
+			out.close();
+		}
+		
+	}
 	@InitBinder
     public void initBinder(ServletRequestDataBinder binder){
         binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true));

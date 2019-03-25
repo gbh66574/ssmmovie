@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Order">
+
+	<insert id="add" parameterType="Order">
+		insert into `order`(price,getordersTime,payment,state)
+		values(#{price},#{getordersTime},#{payment},#{state})
+	</insert>
+	<insert id="addMore">
+	insert into `order`(price,getordersTime,payment,state)values
+	<foreach collection="list" item="s" separator=",">
+	(#{s.price},#{s.getordersTime},#{s.payment},#{s.state})
+	</foreach>
+	</insert>
+	<update id="update" parameterType="Order">
+		update `order` set
+		price=#{price}
+		getordersTime=#{getordersTime}
+		payment=#{payment}
+		state=#{state}
+		where id=#{id}
+	</update>
+	<select id="queryById" parameterType="int" resultType="Order">
+	select * from `order` where id=#{id}
+	</select>
+	<select id="queryAll"  resultType="Order">
+	select * from `order` where id&lt;100
+	</select>
+	<select id="queryByPage" parameterType="map" resultType="com.entor.vo.OrderVo">
+SELECT o.*,os.state pstate FROM `order` o,order_state os WHERE o.state=os.id 	
+     </select>
+	<select id="queryByUsername"   resultType="Order">
+	select * from `order` where username like #{username}
+	</select>
+	<select id="getTotals" resultType="int">
+	select count(*) from `order`
+	</select>
+	<delete id="deleteById">
+	delete from `order` where id=#{id}
+	</delete>
+	<delete id="deleteMore">
+	delete from `order` where id in
+	<foreach collection="array" open="(" close=")" separator="," item="id">
+	#{id}
+	</foreach>
+	</delete>
+	
+</mapper>
