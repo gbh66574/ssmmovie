@@ -214,7 +214,26 @@ public class UserController {
 		UserService.addUser(User);
 		return "success";
 	}
-	
+	@RequestMapping("/queryById")
+	public void queryById(int id) {
+		JSONObject jo = new JSONObject();
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+			UserService.queryById(User.class,id);
+			jo.put("state", 0);
+			jo.put("msg", "查询成功");
+		}catch(Exception e) {
+			jo.put("state", -1);
+			jo.put("msg", "查询失败"+e.getMessage());
+		}finally {
+			String str = JSON.toJSONString(jo);
+			System.out.println(str);
+			out.write(str);
+			out.flush();
+			out.close();
+		}
+	}
 
 	@InitBinder
     public void initBinder(ServletRequestDataBinder binder){

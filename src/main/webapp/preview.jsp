@@ -46,8 +46,8 @@ $(function(){
       <ul id="selected-seats">
       </ul>
       <p>总价: <b>$<span id="total">0</span></b></p>
-      <p><form id="loginForm"  method="post" >
-      <a id="loginSubmint"  href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">加入购物车</a> 
+      <p><form action="Order/add"  method="post" >
+      <button type="submit" >结算</button><br/>
       </form>
        </p>      
       <div id="legend"></div>

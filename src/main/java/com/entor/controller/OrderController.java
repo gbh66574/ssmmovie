@@ -10,6 +10,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -165,70 +166,7 @@ public class OrderController {
 			e.printStackTrace();
 		}
 	}
-//	@RequestMapping("/saveRole")
-//	public void saveRole(String uids,String rids) {
-//		List<OrderRole> list = new ArrayList<>();
-//		OrderRoleDao.deleteOrderRolesByUids(uids);
-//		for(String uid:uids.split(",")) {
-//			for(String rid:rids.split(",")) {
-//				OrderRole OrderRole = new OrderRole();
-//				OrderRole.setUid(Integer.parseInt(uid));
-//				OrderRole.setRid(Integer.parseInt(rid));
-//				list.add(OrderRole);
-//			}
-//		}JSONObject jo = new JSONObject();
-//		PrintWriter out = null;
-//		try {
-//			out = response.getWriter();
-//			addMore(list);
-//			jo.put("state", 0);
-//			jo.put("msg", "分配成功");
-//		}catch(Exception e) {
-//			jo.put("state", -1);
-//			jo.put("msg", "分配失败"+e.getMessage());
-//		}finally {
-//			String str = JSON.toJSONString(jo);
-//			System.out.println(str);
-//			out.write(str);
-//			out.flush();
-//			out.close();
-//		}
-//		
-//	}
-//	@RequestMapping("/getOwnerRoles")
-//	public void getOwnerRoles(String uids) {
-//		try {
-//			PrintWriter out = response.getWriter();
-//			RoleDao dao = new RoleDaoImpl();
-//			List<Role> list = dao.queryAllRolesByUids(uids);
-//			String str = JSON.toJSONString(list);
-//			System.out.println(str);
-//			out.write(str);
-//			out.flush();
-//			out.close();
-//		}catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
-	/*@RequestMapping("/queryAll")
-	public void queryAll() {
-		List<Order>list=OrderService.queryAll(Order.class);
-		try {
-			PrintWriter out = response.getWriter();
-			String json = JSON.toJSONString(list);
-			System.out.println(json);
-			out.write(json);
-			out.flush();
-			out.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}*/
-	/**
-	 * 澶勭悊鍙傛暟涓烘棩鏈熸牸寮�
-	 * @param binder
-	 */
+	
 	@InitBinder
     public void initBinder(ServletRequestDataBinder binder){
         binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true));

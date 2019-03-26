@@ -114,176 +114,15 @@
 				</script>
 				<div class="clear"></div>
 			</div>
-			<div class="header_bottom">
-				<div class="header_bottom_left">
-					<div class="categories">
-						<ul>
-							<h3>电影种类</h3>
-							<li><a href="all.jsp">所有</a></li>
-							<li><a href="all.jsp">爱情</a></li>
-							<li><a href="all.jsp">喜剧</a></li>
-							<li><a href="all.jsp">动画</a></li>
-							<li><a href="all.jsp">剧情</a></li>
-							<li><a href="all.jsp">恐怖</a></li>
-							<li><a href="all.jsp">动作</a></li>
-							<li><a href="all.jsp">音乐</a></li>
-							<li><a href="all.jsp">奇幻</a></li>
-							<li><a href="all.jsp">科幻</a></li>
-							<li><a href="all.jsp">家庭</a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="header_bottom_right">
-					<!------ Slider ------------>
-					<div class="slider">
-						<div class="slider-wrapper theme-default">
-							<div id="slider" class="nivoSlider"style="width: 1120px;">
-								<img src="img/1.png" data-thumb="img/1.png" alt="" /> <img
-									src="img/2.png" data-thumb="img/2.png" alt="" /> <img
-									src="img/3.png" data-thumb="img/3.png" alt="" /> <img
-									src="img/4.png" data-thumb="img/4.png" alt="" /> <img
-									src="img/5.png" data-thumb="img/5.png" alt="" />
-							</div>
-						</div>
-					</div>
-					<!------End Slider ------------>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-	</div>
+			
 	<!------------End Header ------------>
 	<div class="main">
 		<div class="wrap">
 			<div class="content">
-				<div class="content_top">
+			<div class="content_bottom">
 					<div class="heading">
-						<h3>正在热播</h3>
-						<h3 style="float: right;"><a href="all.jsp">更多....</a></h3>
-					</div>
-				
-				<div class="section group">
-					<div class="grid_1_of_5 images_1_of_5">
-						<a href="preview.jsp"><img
-							src="https://p0.meituan.net/movie/9ef02a501fee7f62d49d2096b52175d32155331.jpg@464w_644h_1e_1c"
-							alt="" /></a>
-						<h2>
-							<a href="preview.jsp">驯龙高手3</a>
-						</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">￥38</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.jsp">加入订票车</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					<div class="grid_1_of_5 images_1_of_5">
-						<a href="preview.jsp"><img
-							src="https://p1.meituan.net/movie/616cd50a33550a9225ac781e52d14ae54967551.jpg@464w_644h_1e_1c"
-							alt="" /></a>
-						<h2>
-							<a href="preview.jsp">流浪地球</a>
-						</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">￥50</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.jsp">加入订票车</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-
-					</div>
-					<div class="grid_1_of_5 images_1_of_5">
-						<a href="preview.jsp"><img
-							src="https://p0.meituan.net/movie/fc4dd6cd0c6f7db566a128cc05c475355664427.jpg@464w_644h_1e_1c"
-							alt="" /></a>
-						<h2>
-							<a href="preview.jsp">战斗天使：阿卡丽</a>
-						</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">￥45</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.jsp">加入订票车</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-
-					</div>
-					<div class="grid_1_of_5 images_1_of_5">
-						<a href="preview.jsp"><img
-							src="https://p0.meituan.net/movie/034069fc367db8a7d9644717b416cc2c332883.jpg@464w_644h_1e_1c"
-							alt="" /></a>
-						<h2>
-							<a href="preview.jsp">惊奇队长</a>
-						</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">￥50</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.jsp">加入订票车</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					<div class="grid_1_of_5 images_1_of_5">
-						<a href="preview.jsp"><img
-							src="https://p1.meituan.net/movie/94b9bfc5ffeea6d6e362395992f547762041095.jpg@464w_644h_1e_1c"
-							alt="" /></a>
-						<h2>
-							<a href="preview.jsp">比悲伤更悲伤的故事</a>
-						</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">￥45</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.jsp">加入订票车</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-				</div>
-				<div class="content_bottom">
-					<div class="heading">
-						<h3>即将上映</h3>
-						<div style="float: right;">
-							<h3><a href="all.jsp">更多....</a></h3>
-						</div>
+						<h3>所有</h3>
+						
 					</div>
 					<div class="section group">
 						<div class="grid_1_of_5 images_1_of_5">
@@ -396,8 +235,361 @@
 						</div>
 					</div>
 				</div>
+				<div class="content_top">
+					<div class="heading">
+						
+					</div>
+				
+				<div class="section group">
+				
+					<div class="grid_1_of_5 images_1_of_5">
+						<a href="preview.jsp"><img
+							src="https://p0.meituan.net/movie/9ef02a501fee7f62d49d2096b52175d32155331.jpg@464w_644h_1e_1c"
+							alt="" /></a>
+						<h2>
+							<a href="preview.jsp">驯龙高手3</a>
+						</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">￥38</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.jsp">加入订票车</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					
+					<div class="grid_1_of_5 images_1_of_5">
+						<a href="preview.jsp"><img
+							src="https://p1.meituan.net/movie/616cd50a33550a9225ac781e52d14ae54967551.jpg@464w_644h_1e_1c"
+							alt="" /></a>
+						<h2>
+							<a href="preview.jsp">流浪地球</a>
+						</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">￥50</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.jsp">加入订票车</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+					<div class="grid_1_of_5 images_1_of_5">
+						<a href="preview.jsp"><img
+							src="https://p0.meituan.net/movie/fc4dd6cd0c6f7db566a128cc05c475355664427.jpg@464w_644h_1e_1c"
+							alt="" /></a>
+						<h2>
+							<a href="preview.jsp">战斗天使：阿卡丽</a>
+						</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">￥45</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.jsp">加入订票车</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+					<div class="grid_1_of_5 images_1_of_5">
+						<a href="preview.jsp"><img
+							src="https://p0.meituan.net/movie/034069fc367db8a7d9644717b416cc2c332883.jpg@464w_644h_1e_1c"
+							alt="" /></a>
+						<h2>
+							<a href="preview.jsp">惊奇队长</a>
+						</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">￥50</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.jsp">加入订票车</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="grid_1_of_5 images_1_of_5">
+						<a href="preview.jsp"><img
+							src="https://p1.meituan.net/movie/94b9bfc5ffeea6d6e362395992f547762041095.jpg@464w_644h_1e_1c"
+							alt="" /></a>
+						<h2>
+							<a href="preview.jsp">比悲伤更悲伤的故事</a>
+						</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">￥45</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.jsp">加入订票车</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					
+				</div>
+				
 			</div>
-		</div></div></div>
+			<div class="content_bottom">
+					<div class="heading">
+						<h3>所有</h3>
+						
+					</div>
+					<div class="section group">
+						<div class="grid_1_of_5 images_1_of_5">
+							<a href="preview.jsp"><img
+								src="https://p1.meituan.net/movie/42e660e4dbfa85cf67343b2aba10b71c3577509.jpg@464w_644h_1e_1c"
+								alt="" /></a>
+							<h2>
+								<a href="preview.jsp">篮球冠军</a>
+							</h2>
+							<div class="price-details">
+								<div class="price-number">
+									<p>
+										<span class="rupees">￥40</span>
+									</p>
+								</div>
+								<div class="add-cart">
+									<h4>
+										<a href="preview.jsp">加入订票车</a>
+									</h4>
+								</div>
+								<div class="clear"></div>
+							</div>
+
+						</div>
+						<div class="grid_1_of_5 images_1_of_5">
+							<a href="preview.jsp"><img
+								src="https://p0.meituan.net/movie/4d47b045a3f62bbccf94cb48ad5cbc64303329.jpg@464w_644h_1e_1c"
+								alt="" /></a>
+							<h2>
+								<a href="preview.jsp">乐高大电影2</a>
+							</h2>
+							<div class="price-details">
+								<div class="price-number">
+									<p>
+										<span class="rupees">￥42</span>
+									</p>
+								</div>
+								<div class="add-cart">
+									<h4>
+										<a href="preview.jsp">加入订票车</a>
+									</h4>
+								</div>
+								<div class="clear"></div>
+							</div>
+
+						</div>
+						<div class="grid_1_of_5 images_1_of_5">
+							<a href="preview.jsp"><img
+								src="https://p1.meituan.net/movie/b8a625614c1d401d9cd170b092230ae01516197.jpg@464w_644h_1e_1c"
+								alt="" /></a>
+							<h2>
+								<a href="preview.jsp">地久天长</a>
+							</h2>
+							<div class="price-details">
+								<div class="price-number">
+									<p>
+										<span class="rupees">￥35</span>
+									</p>
+								</div>
+								<div class="add-cart">
+									<h4>
+										<a href="preview.jsp">加入订票车</a>
+									</h4>
+								</div>
+								<div class="clear"></div>
+							</div>
+
+						</div>
+						<div class="grid_1_of_5 images_1_of_5">
+							<a href="preview.jsp"><img
+								src="https://p1.meituan.net/movie/d94e5c3054778f6f48bff3a813b0b7cd5300998.jpg@464w_644h_1e_1c"
+								alt="" /></a>
+							<h2>
+								<a href="preview.jsp">波西米亚狂想曲</a>
+							</h2>
+							<div class="price-details">
+								<div class="price-number">
+									<p>
+										<span class="rupees">￥55</span>
+									</p>
+								</div>
+								<div class="add-cart">
+									<h4>
+										<a href="preview.jsp">加入订票车</a>
+									</h4>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="grid_1_of_5 images_1_of_5">
+							<a href="preview.jsp"><img
+								src="https://p1.meituan.net/movie/404c1923a2366a26462b33b9a339e3a291425.jpg@464w_644h_1e_1c"
+								alt="" /></a>
+							<h2>
+								<a href="preview.jsp">夜伴歌声</a>
+							</h2>
+							<div class="price-details">
+								<div class="price-number">
+									<p>
+										<span class="rupees">￥35</span>
+									</p>
+								</div>
+								<div class="add-cart">
+									<h4>
+										<a href="preview.jsp">加入订票车</a>
+									</h4>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class="content_top">
+					<div class="heading">
+						
+					</div>
+				
+				<div class="section group">
+				
+					<div class="grid_1_of_5 images_1_of_5">
+						<a href="preview.jsp"><img
+							src="https://p0.meituan.net/movie/9ef02a501fee7f62d49d2096b52175d32155331.jpg@464w_644h_1e_1c"
+							alt="" /></a>
+						<h2>
+							<a href="preview.jsp">驯龙高手3</a>
+						</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">￥38</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.jsp">加入订票车</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					
+					<div class="grid_1_of_5 images_1_of_5">
+						<a href="preview.jsp"><img
+							src="https://p1.meituan.net/movie/616cd50a33550a9225ac781e52d14ae54967551.jpg@464w_644h_1e_1c"
+							alt="" /></a>
+						<h2>
+							<a href="preview.jsp">流浪地球</a>
+						</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">￥50</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.jsp">加入订票车</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+					<div class="grid_1_of_5 images_1_of_5">
+						<a href="preview.jsp"><img
+							src="https://p0.meituan.net/movie/fc4dd6cd0c6f7db566a128cc05c475355664427.jpg@464w_644h_1e_1c"
+							alt="" /></a>
+						<h2>
+							<a href="preview.jsp">战斗天使：阿卡丽</a>
+						</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">￥45</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.jsp">加入订票车</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+					<div class="grid_1_of_5 images_1_of_5">
+						<a href="preview.jsp"><img
+							src="https://p0.meituan.net/movie/034069fc367db8a7d9644717b416cc2c332883.jpg@464w_644h_1e_1c"
+							alt="" /></a>
+						<h2>
+							<a href="preview.jsp">惊奇队长</a>
+						</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">￥50</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.jsp">加入订票车</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="grid_1_of_5 images_1_of_5">
+						<a href="preview.jsp"><img
+							src="https://p1.meituan.net/movie/94b9bfc5ffeea6d6e362395992f547762041095.jpg@464w_644h_1e_1c"
+							alt="" /></a>
+						<h2>
+							<a href="preview.jsp">比悲伤更悲伤的故事</a>
+						</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">￥45</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.jsp">加入订票车</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div></div></div></div></div>
 
 		<div class="footer">
    	  <div class="wrap">	
